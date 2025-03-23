@@ -1,5 +1,62 @@
 import random
 
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
 lives = 6
 
 word_list = ["aardvark", "baboon", "camel"]
@@ -12,12 +69,14 @@ correct_letters = []
 for letter in chosen_word:
     placeholder += "_"
 
-print(placeholder)
 
+lives = 6
+stages_index = -1
 game_over = False
 
 while not game_over:
-    guess = input("Guess a letter:\n").lower()
+    print(f"Word to guess: {placeholder}")
+    guess = input("Guess a letter: ").lower()
 
     display = ""
 
@@ -29,8 +88,20 @@ while not game_over:
             display += letter
         else:
             display += "_"
-
+    
+    if guess not in display:
+        lives -= 1
+        stages_index -= 1
+    
+    placeholder = display
+    print(display)
+    print(stages[stages_index])
+    print(f"****************************{lives}/6 LIVES LEFT****************************")
+    
+    if lives == 0:
+        game_over = True
+        print("You lose!")
+    
     if "_" not in display:
         game_over = True
         print("You win!")
-    print(display)
