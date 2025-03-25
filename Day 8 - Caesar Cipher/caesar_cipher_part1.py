@@ -14,18 +14,18 @@ def encrypt(original_text, shift_amount):
         else:
             index_position = alphabet.index(char)
             new_index = index_position + shift_amount
-            if new_index > 26:
-                while new_index > 26:
-                    new_index -= 26
+            if new_index > 25:
+                while new_index > 25:
+                    new_index -= 25
                 new_index -= 1
 
-            if new_index < -26:
-                while new_index < -26:
-                    new_index = new_index + 26
+            if new_index < -25:
+                while new_index < -25:
+                    new_index = new_index + 25
 
             new_messsage += alphabet[new_index]
         
     
     print(new_messsage)
 
-encrypt(original_text=text, shift_amount=2)
+encrypt(original_text=text, shift_amount=shift)
