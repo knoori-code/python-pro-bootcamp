@@ -26,5 +26,10 @@ def decrypt(original_text, shift_amount):
 
     print(f"The decrypted message is: {new_message}")
 
-encrypt(original_text=text, shift_amount=shift)
-decrypt(original_text=text, shift_amount=shift)
+
+def caesar(direction):
+    if direction == "encode":
+        encrypt(original_text=text, shift_amount=shift)
+    else:
+        decrypt(original_text=text, shift_amount=shift)
+        
