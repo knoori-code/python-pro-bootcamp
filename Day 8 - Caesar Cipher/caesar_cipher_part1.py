@@ -7,24 +7,24 @@ shift = int(input("Type the shift number:\n"))
 
 # Take input message and shift each char by the shift amount
 def encrypt(original_text, shift_amount):
-    new_messsage = ''
+    encrypted_message = ''
     for char in original_text:
         original_index = alphabet.index(char)
         new_index = original_index + shift_amount
         new_index = new_index % len(alphabet)
-        new_messsage += alphabet[new_index]
+        encrypted_message += alphabet[new_index]
 
-    print(f"The new message is: {new_messsage}")
+    print(f"The new message is: {encrypted_message}")
 
 def decrypt(original_text, shift_amount):
-    new_message = ''
+    decrypted_message = ''
     for char in original_text:
         original_index = alphabet.index(char)
         new_index = original_index - shift_amount
         new_index = new_index % len(alphabet)
-        new_message += alphabet[new_index]
+        decrypted_message += alphabet[new_index]
 
-    print(f"The decrypted message is: {new_message}")
+    print(f"The decrypted message is: {decrypted_message}")
 
 
 def caesar(direction):
