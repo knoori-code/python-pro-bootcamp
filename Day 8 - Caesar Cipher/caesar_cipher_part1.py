@@ -32,4 +32,6 @@ def caesar(direction):
         encrypt(original_text=text, shift_amount=shift)
     else:
         decrypt(original_text=text, shift_amount=shift)
+
+caesar(direction=direction)
         
