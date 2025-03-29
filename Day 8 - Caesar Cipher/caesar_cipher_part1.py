@@ -9,20 +9,26 @@ shift = int(input("Type the shift number:\n"))
 def encrypt(original_text, shift_amount):
     encrypted_message = ''
     for char in original_text:
-        original_index = alphabet.index(char)
-        new_index = original_index + shift_amount
-        new_index = new_index % len(alphabet)
-        encrypted_message += alphabet[new_index]
+        if char not in alphabet:
+            encrypted_message += char
+        else:
+            original_index = alphabet.index(char)
+            new_index = original_index + shift_amount
+            new_index = new_index % len(alphabet)
+            encrypted_message += alphabet[new_index]
 
     print(f"The new message is: {encrypted_message}")
 
 def decrypt(original_text, shift_amount):
     decrypted_message = ''
     for char in original_text:
-        original_index = alphabet.index(char)
-        new_index = original_index - shift_amount
-        new_index = new_index % len(alphabet)
-        decrypted_message += alphabet[new_index]
+        if char not in alphabet:
+            decrypted_message += char
+        else:
+            original_index = alphabet.index(char)
+            new_index = original_index - shift_amount
+            new_index = new_index % len(alphabet)
+            decrypted_message += alphabet[new_index]
 
     print(f"The decrypted message is: {decrypted_message}")
 
