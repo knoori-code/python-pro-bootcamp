@@ -16,4 +16,15 @@ def encrypt(original_text, shift_amount):
 
     print(f"The new message is: {new_messsage}")
 
-encrypt(original_text=text, shift_amount=shift)
+def decrypt(original_text, shift_amount):
+    new_message = ''
+    for char in original_text:
+        original_index = alphabet.index(char)
+        new_index = original_index - shift_amount
+        new_index = new_index % len(alphabet)
+        new_message += alphabet[new_index]
+
+    print(f"The decrypted message is: {new_message}")
+
+# encrypt(original_text=text, shift_amount=shift)
+decrypt(original_text=text, shift_amount=shift)
