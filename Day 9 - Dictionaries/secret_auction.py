@@ -16,6 +16,6 @@ max_bid = 0
 for key in auction_dictionary:
     if auction_dictionary[key] > max_bid:
         max_bid = auction_dictionary[key]
-        name = key
+        winner_name = key
 
-print(f"The winner is {name} with a bid of ${max_bid}!")
+print(f"The winner is {winner_name} with a bid of ${max_bid}!")
