@@ -1,4 +1,5 @@
 def is_leap_year(year):
+    """States whether input year is a leap year"""
     if year % 400 == 0:
         return True
     
