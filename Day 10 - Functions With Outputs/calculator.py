@@ -10,7 +10,7 @@ def multiply(n1, n2):
 def divide(n1, n2):
     return n1 / n2
 
-calculation_dictionary = {
+operations_dictionary = {
     "+": add,
     "-": subtract,
     "*": multiply,
