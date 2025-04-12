@@ -20,17 +20,24 @@ operations_dictionary = {
 # multiply 4 * 8
 # print(operations_dictionary["*"](4, 8))
 
-first_number = float(input("What's the first number?: "))
+while True:
+    first_number = float(input("What's the first number?: "))
+    continue_game = True
 
-operation_list = ["+", "-", "*", "/"]
+    while continue_game:
+        operation_list = ["+", "-", "*", "/"]
 
-for operation in operation_list:
-    print(operation)
+        for operation in operation_list:
+            print(operation)
 
-chosen_operation = input("Pick an operation: ")
-second_number = float(input("What's the next number: "))
+        chosen_operation = input("Pick an operation: ")
+        second_number = float(input("What's the next number: "))
 
-calculated_result = operations_dictionary[chosen_operation](first_number, second_number)
-print(f"{first_number} {chosen_operation} {second_number} = {calculated_result}")
+        calculated_result = operations_dictionary[chosen_operation](first_number, second_number)
+        print(f"{first_number} {chosen_operation} {second_number} = {calculated_result}")
 
-continue_game = input(f"Type 'y' to continue calculating with {calculated_result}, or type 'n' to continue with a new calculation: ")
+        to_continue = input(f"Type 'y' to continue calculating with {calculated_result}, or type 'n' to continue with a new calculation: ").lower()
+        if to_continue == "n":
+            continue_game = False
+            
+        first_number = calculated_result
