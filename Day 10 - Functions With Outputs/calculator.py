@@ -25,10 +25,9 @@ while True:
     continue_game = True
 
     while continue_game:
-        operation_list = ["+", "-", "*", "/"]
 
-        for operation in operation_list:
-            print(operation)
+        for symbol in operations_dictionary:
+            print(symbol)
 
         chosen_operation = input("Pick an operation: ")
         second_number = float(input("What's the next number: "))
@@ -39,5 +38,5 @@ while True:
         to_continue = input(f"Type 'y' to continue calculating with {calculated_result}, or type 'n' to continue with a new calculation: ").lower()
         if to_continue == "n":
             continue_game = False
-            
+
         first_number = calculated_result
