@@ -20,7 +20,7 @@ operations_dictionary = {
 # multiply 4 * 8
 # print(operations_dictionary["*"](4, 8))
 
-first_number = int(input("What's the first number?: "))
+first_number = float(input("What's the first number?: "))
 
 operation_list = ["+", "-", "*", "/"]
 
@@ -28,7 +28,7 @@ for operation in operation_list:
     print(operation)
 
 chosen_operation = input("Pick an operation: ")
-second_number = int(input("What's the next number: "))
+second_number = float(input("What's the next number: "))
 
 calculated_result = operations_dictionary[chosen_operation](first_number, second_number)
-print(calculated_result)
+print(f"{first_number} {chosen_operation} {second_number} = {calculated_result}")
