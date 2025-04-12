@@ -20,12 +20,11 @@ operations_dictionary = {
 # multiply 4 * 8
 # print(operations_dictionary["*"](4, 8))
 
-while True:
+def calculator():
     first_number = float(input("What's the first number?: "))
     continue_game = True
 
     while continue_game:
-
         for symbol in operations_dictionary:
             print(symbol)
 
@@ -35,8 +34,12 @@ while True:
         calculated_result = operations_dictionary[chosen_operation](first_number, second_number)
         print(f"{first_number} {chosen_operation} {second_number} = {calculated_result}")
 
-        to_continue = input(f"Type 'y' to continue calculating with {calculated_result}, or type 'n' to continue with a new calculation: ").lower()
-        if to_continue == "n":
+        choice = input(f"Type 'y' to continue calculating with {calculated_result}, or type 'n' to continue with a new calculation: ").lower()
+        if choice == "y":
+            first_number = calculated_result
+        else:
             continue_game = False
+            print("\n" * 20)
+            calculator()
 
-        first_number = calculated_result
+calculator()
