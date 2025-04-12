@@ -29,6 +29,6 @@ for operation in operation_list:
 
 chosen_operation = input("Pick an operation: ")
 
-
+second_number = int(input("What's the next number: "))
 
 
