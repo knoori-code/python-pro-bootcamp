@@ -32,3 +32,5 @@ second_number = float(input("What's the next number: "))
 
 calculated_result = operations_dictionary[chosen_operation](first_number, second_number)
 print(f"{first_number} {chosen_operation} {second_number} = {calculated_result}")
+
+continue_game = input(f"Type 'y' to continue calculating with {calculated_result}, or type 'n' to continue with a new calculation: ")
