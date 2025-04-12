@@ -28,7 +28,7 @@ for operation in operation_list:
     print(operation)
 
 chosen_operation = input("Pick an operation: ")
-
 second_number = int(input("What's the next number: "))
 
-
+calculated_result = operations_dictionary[chosen_operation](first_number, second_number)
+print(calculated_result)
