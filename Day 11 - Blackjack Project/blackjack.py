@@ -7,6 +7,10 @@ cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 player_cards = []
 computer_cards = []
 
+def check_score(card_list):
+    total = sum(card_list)
+    return total
+
 def generate_random_card():
     index = random.randint(0, 12)
     random_card = cards[index]
