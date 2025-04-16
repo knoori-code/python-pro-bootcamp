@@ -21,4 +21,6 @@ for i in range(2):
     player_cards.append(generate_random_card())
     computer_cards.append(generate_random_card())
 
+computer_first_card = computer_cards[0]
+
 # print(player_cards, computer_cards)
