@@ -28,3 +28,5 @@ computer_first_card = computer_cards[0]
 question = input("Do you want to play a game of Blackjack? Type 'y' or 'n':").lower()
 print(f"Your cards: {player_cards}, current score: {check_score(player_cards)}")
 print(f"Computer's first card: {computer_first_card}")
+
+another_card_choice = input("Type 'y' to get another card, type 'n' to pass: ")
