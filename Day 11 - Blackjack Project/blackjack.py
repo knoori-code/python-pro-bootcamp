@@ -24,3 +24,5 @@ for i in range(2):
 computer_first_card = computer_cards[0]
 
 # print(player_cards, computer_cards)
+
+question = input("Do you want to play a game of Blackjack? Type 'y' or 'n':").lower()
