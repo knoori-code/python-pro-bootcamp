@@ -30,3 +30,6 @@ print(f"Your cards: {player_cards}, current score: {check_score(player_cards)}")
 print(f"Computer's first card: {computer_first_card}")
 
 another_card_choice = input("Type 'y' to get another card, type 'n' to pass: ")
+
+if another_card_choice == 'y':
+    player_cards.append(generate_random_card())
