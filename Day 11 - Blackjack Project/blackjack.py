@@ -7,3 +7,6 @@ play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
 
 logo = art.logo
 print(logo)
+
+def generate_cards(player_card_list, computer_card_list):
+    
