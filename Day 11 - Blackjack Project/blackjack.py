@@ -18,9 +18,18 @@ for i in range(2):
     player_cards.append(cards[random_index1])
     computer_cards.append(cards[random_index2])
 
+# Create function to tally scores
+def final_game_scores(who, hand, total):
+    print(f"{who} final hand: {hand}, final score: {total}")
+
 player_score = sum(player_cards)
+computer_score = sum(computer_cards)
 
 print(f"Your cards: {player_cards}, current score: {player_score}")
 print(f"Computer's first card: {computer_cards[0]}")
+
+# Check if Blackjack achieved
+if player_score == 21 and computer_score == 21:
+
 
 want_another_card = input("Type 'y' to get another card, type 'n' to pass: ")
