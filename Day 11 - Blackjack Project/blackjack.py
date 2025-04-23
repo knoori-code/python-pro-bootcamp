@@ -30,6 +30,8 @@ print(f"Computer's first card: {computer_cards[0]}")
 
 # Check if Blackjack achieved
 if player_score == 21 and computer_score == 21:
-
+    final_game_scores('Your', player_cards, player_score)
+    final_game_scores('Computer\'s', computer_cards, computer_score)
+    print("The game is a tie with double Blackjack!")
 
 want_another_card = input("Type 'y' to get another card, type 'n' to pass: ")
