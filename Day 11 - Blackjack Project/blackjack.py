@@ -22,3 +22,5 @@ player_score = sum(player_cards)
 
 print(f"Your cards: {player_cards}, current score: {player_score}")
 print(f"Computer's first card: {computer_cards[0]}")
+
+want_another_card = input("Type 'y' to get another card, type 'n' to pass: ")
