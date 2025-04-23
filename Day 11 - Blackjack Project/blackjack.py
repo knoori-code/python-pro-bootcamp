@@ -18,5 +18,7 @@ for i in range(2):
     player_cards.append(cards[random_index1])
     computer_cards.append(cards[random_index2])
 
-print(player_cards)
-print(computer_cards)
+player_score = sum(player_cards)
+
+print(f"Your cards: {player_cards}, current score: {player_score}")
+print(f"Computer's first card: {computer_cards[0]}")
