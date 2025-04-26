@@ -11,12 +11,15 @@ print(logo)
 player_cards = []
 computer_cards = []
 
+# Add a new card to hand
+def generate_new_card(whose_cards):
+    random_index = random.randint(0, 12)
+    whose_cards.append(cards[random_index])
+
 # Generate 2 random cards for computer and player
 for i in range(2):
-    random_index1 = random.randint(0, 12)
-    random_index2 = random.randint(0, 12)
-    player_cards.append(cards[random_index1])
-    computer_cards.append(cards[random_index2])
+    generate_new_card(player_cards)
+    generate_new_card(computer_cards)
 
 def tally_computer_score(score, hand, cards):
     while score < 17:
