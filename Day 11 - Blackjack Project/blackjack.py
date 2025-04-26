@@ -18,7 +18,16 @@ for i in range(2):
     player_cards.append(cards[random_index1])
     computer_cards.append(cards[random_index2])
 
-# Create function to tally scores
+def tally_computer_score(score, hand, cards):
+    while score < 17:
+        random_index = random.randint(0, 12)
+        hand.append(cards[random_index])
+        if score > 21 and 11 in hand:
+            # Change 11 to 1 
+            index = hand.index(11)
+            hand[index] = 1
+
+# Function to tally and show final hands and scores
 def final_game_scores(who, hand, total):
     print(f"{who} final hand: {hand}, final score: {total}")
 
@@ -33,5 +42,8 @@ if player_score == 21 and computer_score == 21:
     final_game_scores('Your', player_cards, player_score)
     final_game_scores('Computer\'s', computer_cards, computer_score)
     print("The game is a tie with double Blackjack!")
+elif player_score == 21:
+# Tally computer final score
+
 
 want_another_card = input("Type 'y' to get another card, type 'n' to pass: ")
