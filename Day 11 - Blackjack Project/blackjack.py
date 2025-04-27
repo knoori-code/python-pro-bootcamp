@@ -21,7 +21,8 @@ for i in range(2):
     generate_new_card(player_cards)
     generate_new_card(computer_cards)
 
-def tally_computer_score(score, hand):
+def tally_computer_score(hand):
+    score = sum(hand)
     while score < 17:
         generate_new_card(hand)
         if score > 21 and 11 in hand:
