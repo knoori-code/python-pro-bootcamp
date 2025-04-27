@@ -12,6 +12,7 @@ def complete_computer_hand(hand):
     score = sum(hand)
     while score < 17:
         generate_new_card(hand)
+        score = sum(hand)
         if score > 21 and 11 in hand:
             # Change 11 to 1 if total over 21
             index_for_11 = hand.index(11)
@@ -38,7 +39,8 @@ for i in range(2):
     generate_new_card(player_cards)
     generate_new_card(computer_cards)
 
-player_score = sum(player_cards)
+# player_score = sum(player_cards)
+player_score = 21
 computer_score = sum(computer_cards)
 
 print(f"Your cards: {player_cards}, current score: {player_score}")
