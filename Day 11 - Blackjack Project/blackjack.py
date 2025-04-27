@@ -27,8 +27,9 @@ def complete_computer_hand(hand):
         generate_new_card(hand)
         if score > 21 and 11 in hand:
             # Change 11 to 1 
-            index = hand.index(11)
-            hand[index] = 1
+            index_for_11 = hand.index(11)
+            hand[index_for_11] = 1
+            score = sum(hand)
 
 # Function to tally and show final hands and scores
 def final_game_scores(who, hand, total):
