@@ -25,37 +25,42 @@ def final_game_score(who, hand, total):
     print(f"{who} final hand: {hand}, final score: {total}")
 
 
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+def blackjack():
 
-play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
-logo = art.logo
-print(logo)
+    play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
 
-player_cards = []
-computer_cards = []
+    logo = art.logo
+    print(logo)
 
-for i in range(2):
-    generate_new_card(player_cards)
-    generate_new_card(computer_cards)
+    player_cards = []
+    computer_cards = []
 
-player_score = sum(player_cards)
-computer_score = sum(computer_cards)
+    for i in range(2):
+        generate_new_card(player_cards)
+        generate_new_card(computer_cards)
 
-print(f"Your cards: {player_cards}, current score: {player_score}")
-print(f"Computer's first card: {computer_cards[0]}")
-
-# Check if Blackjack achieved
-if player_score == 21 and computer_score == 21:
-    final_game_score('Your', player_cards, player_score)
-    final_game_score('Computer\'s', computer_cards, computer_score)
-    print("The game is a tie with double Blackjack!")
-elif player_score == 21:
-    # Tally computer final score
-    complete_computer_hand(computer_cards)
+    player_score = sum(player_cards)
     computer_score = sum(computer_cards)
-    final_game_score('Your', player_cards, player_score)
-    final_game_score('Computer\'s', computer_cards, computer_score)
-    print("You win with a Blackjack!")
 
-want_another_card = input("Type 'y' to get another card, type 'n' to pass: ")
+    print(f"Your cards: {player_cards}, current score: {player_score}")
+    print(f"Computer's first card: {computer_cards[0]}")
+
+    # Check if Blackjack achieved
+    if player_score == 21 and computer_score == 21:
+        final_game_score('Your', player_cards, player_score)
+        final_game_score('Computer\'s', computer_cards, computer_score)
+        print("The game is a tie with double Blackjack!")
+    elif player_score == 21:
+        # Tally computer final score
+        complete_computer_hand(computer_cards)
+        computer_score = sum(computer_cards)
+        final_game_score('Your', player_cards, player_score)
+        final_game_score('Computer\'s', computer_cards, computer_score)
+        print("You win with a Blackjack!")
+
+    want_another_card = input("Type 'y' to get another card, type 'n' to pass: ")
+
+
+blackjack()
