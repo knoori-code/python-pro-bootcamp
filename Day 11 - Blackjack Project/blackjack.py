@@ -2,16 +2,16 @@ import random
 import art
 
 # Add a new card to hand
-def generate_new_card(whose_cards):
+def generate_new_card(whose_cards, deck):
     random_index = random.randint(0, 12)
-    whose_cards.append(cards[random_index])
+    whose_cards.append(deck[random_index])
 
 
 # Generate 2 random cards for computer and player
-def complete_computer_hand(hand):
+def complete_computer_hand(hand, deck):
     score = sum(hand)
     while score < 17:
-        generate_new_card(hand)
+        generate_new_card(hand, deck)
         score = sum(hand)
         if score > 21 and 11 in hand:
             # Change 11 to 1 if total over 21
@@ -25,10 +25,10 @@ def final_game_score(who, hand, total):
     print(f"{who} final hand: {hand}, final score: {total}")
 
 
+
 def blackjack():
 
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-
     play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
 
     logo = art.logo
@@ -38,8 +38,8 @@ def blackjack():
     computer_cards = []
 
     for i in range(2):
-        generate_new_card(player_cards)
-        generate_new_card(computer_cards)
+        generate_new_card(player_cards, cards)
+        generate_new_card(computer_cards, cards)
 
     player_score = sum(player_cards)
     computer_score = sum(computer_cards)
@@ -52,13 +52,15 @@ def blackjack():
         final_game_score('Your', player_cards, player_score)
         final_game_score('Computer\'s', computer_cards, computer_score)
         print("The game is a tie with double Blackjack!")
+        return
     elif player_score == 21:
         # Tally computer final score
-        complete_computer_hand(computer_cards)
+        complete_computer_hand(computer_cards, cards)
         computer_score = sum(computer_cards)
         final_game_score('Your', player_cards, player_score)
         final_game_score('Computer\'s', computer_cards, computer_score)
         print("You win with a Blackjack!")
+        return
 
     want_another_card = input("Type 'y' to get another card, type 'n' to pass: ")
 
