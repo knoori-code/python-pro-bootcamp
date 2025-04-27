@@ -39,8 +39,7 @@ for i in range(2):
     generate_new_card(player_cards)
     generate_new_card(computer_cards)
 
-# player_score = sum(player_cards)
-player_score = 21
+player_score = sum(player_cards)
 computer_score = sum(computer_cards)
 
 print(f"Your cards: {player_cards}, current score: {player_score}")
