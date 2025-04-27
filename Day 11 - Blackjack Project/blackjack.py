@@ -54,6 +54,7 @@ if player_score == 21 and computer_score == 21:
 elif player_score == 21:
     # Tally computer final score
     complete_computer_hand(computer_cards)
+    computer_score = sum(computer_cards)
     final_game_score('Your', player_cards, player_score)
     final_game_score('Computer\'s', computer_cards, computer_score)
     print("You win with a Blackjack!")
