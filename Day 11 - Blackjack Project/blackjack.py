@@ -26,13 +26,13 @@ def complete_computer_hand(hand):
     while score < 17:
         generate_new_card(hand)
         if score > 21 and 11 in hand:
-            # Change 11 to 1 
+            # Change 11 to 1 if total over 21
             index_for_11 = hand.index(11)
             hand[index_for_11] = 1
             score = sum(hand)
 
 # Function to tally and show final hands and scores
-def final_game_scores(who, hand, total):
+def final_game_score(who, hand, total):
     print(f"{who} final hand: {hand}, final score: {total}")
 
 player_score = sum(player_cards)
@@ -43,11 +43,14 @@ print(f"Computer's first card: {computer_cards[0]}")
 
 # Check if Blackjack achieved
 if player_score == 21 and computer_score == 21:
-    final_game_scores('Your', player_cards, player_score)
-    final_game_scores('Computer\'s', computer_cards, computer_score)
+    final_game_score('Your', player_cards, player_score)
+    final_game_score('Computer\'s', computer_cards, computer_score)
     print("The game is a tie with double Blackjack!")
 elif player_score == 21:
-# Tally computer final score
-
+    # Tally computer final score
+    complete_computer_hand(computer_cards)
+    final_game_score('Your', player_cards, player_score)
+    final_game_score('Computer\'s', computer_cards, computer_score)
+    print("You win with a Blackjack!")
 
 want_another_card = input("Type 'y' to get another card, type 'n' to pass: ")
