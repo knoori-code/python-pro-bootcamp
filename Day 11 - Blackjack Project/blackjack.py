@@ -25,6 +25,9 @@ def final_game_score(who, hand, total):
     print(f"{who} final hand: {hand}, final score: {total}")
 
 
+def current_game_scores(player_hand, player_total, computer_hand):
+    print(f"Your cards: {player_hand}, current score: {player_total}")
+    print(f"Computer's first card: {computer_hand[0]}")
 
 def blackjack():
 
@@ -44,8 +47,7 @@ def blackjack():
     player_score = sum(player_cards)
     computer_score = sum(computer_cards)
 
-    print(f"Your cards: {player_cards}, current score: {player_score}")
-    print(f"Computer's first card: {computer_cards[0]}")
+    current_game_scores(player_cards, player_score, computer_cards)
 
     # Check if Blackjack achieved
     if player_score == 21 and computer_score == 21:
@@ -61,8 +63,16 @@ def blackjack():
         final_game_score('Computer\'s', computer_cards, computer_score)
         print("You win with a Blackjack!")
         return
+    
+    want_another_card = True
 
-    want_another_card = input("Type 'y' to get another card, type 'n' to pass: ")
+    while want_another_card:
+        card_choice = input("Type 'y' to get another card, type 'n' to pass: ").lower()
 
+        if card_choice == "y":
+            generate_new_card(player_cards, cards)
+            player_score = sum(player_cards)
+            current_game_scores(player_cards, player_score, computer_cards)
+            
 
 blackjack()
