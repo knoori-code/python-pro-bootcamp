@@ -55,7 +55,8 @@ def blackjack():
         final_game_score('Computer\'s', computer_cards, computer_score)
         print("The game is a tie with double Blackjack!")
         return
-    elif player_score == 21:
+    
+    if player_score == 21:
         # Tally computer final score
         complete_computer_hand(computer_cards, cards)
         computer_score = sum(computer_cards)
@@ -73,6 +74,7 @@ def blackjack():
             generate_new_card(player_cards, cards)
             player_score = sum(player_cards)
             current_game_scores(player_cards, player_score, computer_cards)
-            
+            # Check game scores and determine winner
+
 
 blackjack()
