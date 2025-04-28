@@ -65,6 +65,12 @@ def blackjack():
         print("You win with a Blackjack!")
         return
     
+    if computer_score == 21:
+        final_game_score('Your', player_cards, player_score)
+        final_game_score('Computer\'s', computer_cards, computer_score)
+        print("The computer wins with a Blackjack!")
+        return
+
     want_another_card = True
 
     while want_another_card:
