@@ -54,7 +54,7 @@ def blackjack():
         final_game_score('Your', player_cards, player_score)
         final_game_score('Computer\'s', computer_cards, computer_score)
         print("The game is a tie with double Blackjack!")
-        return
+        blackjack()
     
     if player_score == 21:
         # Tally computer final score
@@ -63,13 +63,13 @@ def blackjack():
         final_game_score('Your', player_cards, player_score)
         final_game_score('Computer\'s', computer_cards, computer_score)
         print("You win with a Blackjack!")
-        return
+        blackjack()
     
     if computer_score == 21:
         final_game_score('Your', player_cards, player_score)
         final_game_score('Computer\'s', computer_cards, computer_score)
         print("The computer wins with a Blackjack!")
-        return
+        blackjack()
 
     want_another_card = True
 
@@ -79,8 +79,11 @@ def blackjack():
         if card_choice == "y":
             generate_new_card(player_cards, cards)
             player_score = sum(player_cards)
+            while player_score > 21 and 11 in player_cards:
+                index_position = player_cards.index(11)
+                player_cards[index_position] = 1
             current_game_scores(player_cards, player_score, computer_cards)
-            # Check game scores and determine winner
+            # Check if player is over 21. End game if they are
 
 
 blackjack()
