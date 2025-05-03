@@ -13,7 +13,7 @@ def complete_computer_hand(hand, deck):
     while score < 17:
         generate_new_card(hand, deck)
         score = sum(hand)
-        if score > 21 and 11 in hand:
+        while score > 21 and 11 in hand:
             # Change 11 to 1 if total over 21
             index_for_11 = hand.index(11)
             hand[index_for_11] = 1
@@ -84,7 +84,7 @@ def blackjack():
                 player_cards[index_position] = 1
             current_game_scores(player_cards, player_score, computer_cards)
             # Check if player is over 21. End game if they are
-            
+
 
 
 blackjack()
