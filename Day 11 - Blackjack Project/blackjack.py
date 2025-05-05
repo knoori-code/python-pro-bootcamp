@@ -84,7 +84,8 @@ def blackjack():
                 player_cards[index_position] = 1
             current_game_scores(player_cards, player_score, computer_cards)
             # Check if player is over 21. End game if they are
-
+            # if less than 21, ask if they want another card (loop again)
+            
 
 
 blackjack()
