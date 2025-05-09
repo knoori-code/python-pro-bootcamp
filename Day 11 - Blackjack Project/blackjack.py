@@ -20,25 +20,25 @@ def complete_computer_hand(hand, deck):
             score = sum(hand)
 
 
-def compare_scores(player_sum, computer_sum):
+def compare_scores(player_sum, computer_sum, player_hand, computer_hand, deck):
     if player_sum == 21 and computer_sum == 21:
-        final_game_score('Your', player_cards, player_sum)
-        final_game_score('Computer\'s', computer_cards, computer_sum)
+        final_game_score('Your', player_hand, player_sum)
+        final_game_score('Computer\'s', computer_hand, computer_sum)
         print("The game is a tie with double Blackjack!")
         blackjack()
     
     if player_sum == 21:
         # Tally computer final score
-        complete_computer_hand(computer_cards, cards)
-        computer_sum = sum(computer_cards)
-        final_game_score('Your', player_cards, player_sum)
-        final_game_score('Computer\'s', computer_cards, computer_sum)
+        complete_computer_hand(computer_hand, deck)
+        computer_sum = sum(computer_hand)
+        final_game_score('Your', player_hand, player_sum)
+        final_game_score('Computer\'s', computer_hand, computer_sum)
         print("You win with a Blackjack!")
         blackjack()
     
     if computer_sum == 21:
-        final_game_score('Your', player_cards, player_sum)
-        final_game_score('Computer\'s', computer_cards, computer_sum)
+        final_game_score('Your', player_hand, player_sum)
+        final_game_score('Computer\'s', computer_hand, computer_sum)
         print("The computer wins with a Blackjack!")
         blackjack()
 
