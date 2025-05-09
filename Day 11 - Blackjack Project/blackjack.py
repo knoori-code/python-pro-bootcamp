@@ -73,6 +73,7 @@ def blackjack():
     current_game_scores(player_cards, player_score, computer_cards)
 
     # Check if Blackjack achieved
+    compare_scores(player_score, computer_score, player_cards, computer_cards, cards)
 
     want_another_card = True
 
