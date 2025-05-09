@@ -20,6 +20,29 @@ def complete_computer_hand(hand, deck):
             score = sum(hand)
 
 
+def compare_scores():
+    if player_score == 21 and computer_score == 21:
+        final_game_score('Your', player_cards, player_score)
+        final_game_score('Computer\'s', computer_cards, computer_score)
+        print("The game is a tie with double Blackjack!")
+        blackjack()
+    
+    if player_score == 21:
+        # Tally computer final score
+        complete_computer_hand(computer_cards, cards)
+        computer_score = sum(computer_cards)
+        final_game_score('Your', player_cards, player_score)
+        final_game_score('Computer\'s', computer_cards, computer_score)
+        print("You win with a Blackjack!")
+        blackjack()
+    
+    if computer_score == 21:
+        final_game_score('Your', player_cards, player_score)
+        final_game_score('Computer\'s', computer_cards, computer_score)
+        print("The computer wins with a Blackjack!")
+        blackjack()
+
+
 # Function to tally and show final hands and scores
 def final_game_score(who, hand, total):
     print(f"{who} final hand: {hand}, final score: {total}")
@@ -50,26 +73,6 @@ def blackjack():
     current_game_scores(player_cards, player_score, computer_cards)
 
     # Check if Blackjack achieved
-    if player_score == 21 and computer_score == 21:
-        final_game_score('Your', player_cards, player_score)
-        final_game_score('Computer\'s', computer_cards, computer_score)
-        print("The game is a tie with double Blackjack!")
-        blackjack()
-    
-    if player_score == 21:
-        # Tally computer final score
-        complete_computer_hand(computer_cards, cards)
-        computer_score = sum(computer_cards)
-        final_game_score('Your', player_cards, player_score)
-        final_game_score('Computer\'s', computer_cards, computer_score)
-        print("You win with a Blackjack!")
-        blackjack()
-    
-    if computer_score == 21:
-        final_game_score('Your', player_cards, player_score)
-        final_game_score('Computer\'s', computer_cards, computer_score)
-        print("The computer wins with a Blackjack!")
-        blackjack()
 
     want_another_card = True
 
@@ -84,7 +87,7 @@ def blackjack():
                 player_cards[index_position] = 1
             current_game_scores(player_cards, player_score, computer_cards)
             # Check game scores and end game if either player or both are over 21
-            # if less than 21, ask if they want another card (loop again)
+
             
 
 
