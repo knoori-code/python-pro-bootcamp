@@ -42,6 +42,11 @@ def compare_scores(player_sum, computer_sum, player_hand, computer_hand, deck):
         print("The computer wins with a Blackjack!")
         blackjack()
 
+    if computer_sum > 21 and player_sum > 21:
+        final_game_score('Your', player_hand, player_sum)
+        final_game_score('Computer\'s', computer_hand, computer_sum)
+        print("You both went over. You both lose!")
+
     if player_sum > 21:
         final_game_score('Your', player_hand, player_sum)
         final_game_score('Computer\'s', computer_hand, computer_sum)
