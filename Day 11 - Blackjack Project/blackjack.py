@@ -58,8 +58,6 @@ def compare_scores(player_sum, computer_sum, player_hand, computer_hand, deck):
         final_game_score('Computer\'s', computer_hand, computer_sum)
         print("The computer went over. You win!")
 
-    
-
 
 # Function to tally and show final hands and scores
 def final_game_score(who, hand, total):
