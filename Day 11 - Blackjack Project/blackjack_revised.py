@@ -38,6 +38,14 @@ def blackjack():
             print("Both players have Blackjack! The game is a draw.")
             blackjack()
 
+        if player_score == 21:
+            print("You win the game with a Blackjack!")
+            blackjack()
+
+        if computer_score == 21:
+            print("The computer has Blackjack! You lose.")
+
+        
 
 
 blackjack()
