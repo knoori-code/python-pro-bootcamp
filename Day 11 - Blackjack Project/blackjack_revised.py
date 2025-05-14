@@ -7,6 +7,13 @@ def generate_random_card(hand):
     random_index = random.randint(0, 12)
     hand.append(cards[random_index])
 
+
+def show_current_score(player_cards, computer_cards):
+    player_score = sum(player_cards)
+    print(f"Your cards: {player_cards}, current score: {player_score}")
+    print(f"Computer's first card: {computer_cards[0]}")
+
+
 def blackjack(): 
     play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n'").lower()
     player_hand = []
@@ -21,9 +28,7 @@ def blackjack():
             generate_random_card(computer_hand)
 
         # Show player's current cards and score and computer's first card
-        player_score = sum(player_hand)
-        print(f"Your cards: {player_hand}, current score: {player_score}")
-        print(f"Computer's first card: {computer_hand[0]}")
+        show_current_score(player_hand, computer_hand)
 
 
 blackjack()
