@@ -19,3 +19,11 @@ def blackjack():
         for i in range(2):
             generate_random_card(player_hand)
             generate_random_card(computer_hand)
+
+        # Show player's current cards and score and computer's first card
+        player_score = sum(player_hand)
+        print(f"Your cards: {player_hand}, current score: {player_score}")
+        print(f"Computer's first card: {computer_hand[0]}")
+
+
+blackjack()
