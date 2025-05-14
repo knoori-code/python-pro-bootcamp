@@ -2,6 +2,7 @@ import art
 import random
 
 blackjack_logo = art.logo
+print(blackjack_logo)
 
 play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n'").lower()
 
