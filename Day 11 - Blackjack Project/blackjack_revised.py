@@ -34,5 +34,10 @@ def blackjack():
         player_score = sum(player_hand)
         computer_score = sum(computer_hand)
 
+        if player_score == 21 and computer_score == 21:
+            print("Both players have Blackjack! The game is a draw.")
+            blackjack()
+
+
 
 blackjack()
