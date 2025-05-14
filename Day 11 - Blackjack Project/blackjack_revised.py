@@ -30,5 +30,9 @@ def blackjack():
         # Show player's current cards and score and computer's first card
         show_current_score(player_hand, computer_hand)
 
+        # Check if either player has blackjack. End game and declare winner if they do
+        player_score = sum(player_hand)
+        computer_score = sum(computer_hand)
+
 
 blackjack()
