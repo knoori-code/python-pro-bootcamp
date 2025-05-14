@@ -1,9 +1,9 @@
 import art
 import random
 
-blackjack_logo = art.logo
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n'").lower()
 
 if play_game == 'y':
-    print(blackjack_logo)
+    print(art.logo)
