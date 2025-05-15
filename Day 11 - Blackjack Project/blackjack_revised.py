@@ -21,6 +21,29 @@ def show_final_scores(player_cards, computer_cards):
     print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
 
 
+def compare_scores(player_cards, computer_cards):
+    player_score = sum(player_cards)
+    computer_score = sum(computer_cards)
+
+    if player_score == 21 and computer_score == 21:
+        print("Both players have Blackjack! The game is a draw.")
+        # Show final scores if blackjack achieved
+        show_final_scores(player_cards, computer_cards)
+        blackjack()
+
+    if player_score == 21:
+        print("You win the game with a Blackjack!")
+        # Show final scores if blackjack achieved
+        show_final_scores(player_cards, computer_cards)
+        blackjack()
+
+    if computer_score == 21:
+        print("The computer has Blackjack! You lose.")
+        # Show final scores if blackjack achieved
+        show_final_scores(player_cards, computer_cards)
+        blackjack()
+
+
 def blackjack(): 
     play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n'").lower()
     player_hand = []
@@ -38,26 +61,7 @@ def blackjack():
         show_current_score(player_hand, computer_hand)
 
         # Check if either player has blackjack. End game and declare winner if they do
-        player_score = sum(player_hand)
-        computer_score = sum(computer_hand)
-
-        if player_score == 21 and computer_score == 21:
-            print("Both players have Blackjack! The game is a draw.")
-            # Show final scores if blackjack achieved
-            show_final_scores(player_hand, computer_hand)
-            blackjack()
-
-        if player_score == 21:
-            print("You win the game with a Blackjack!")
-            # Show final scores if blackjack achieved
-            show_final_scores(player_hand, computer_hand)
-            blackjack()
-
-        if computer_score == 21:
-            print("The computer has Blackjack! You lose.")
-            # Show final scores if blackjack achieved
-            show_final_scores(player_hand, computer_hand)
-            blackjack()
+        
 
         
 
