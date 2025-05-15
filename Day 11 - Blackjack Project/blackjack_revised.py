@@ -103,6 +103,8 @@ def blackjack():
         show_current_score(player_hand, computer_hand)
 
         # Call compare_scores() to check for winner
+
+        # Different functions for determining Blackjack and regular scores?
         compare_scores(player_hand, computer_hand)
 
 
@@ -114,8 +116,8 @@ def blackjack():
 
             # Update player score
 
-            # If player score > 21, compare scores
-            # If player score < 21, ask if player wants another card
+            # If player score > 21, compare scores and end game
+            # If player score < 21, ask if player wants another card. If not, tally computer score and compare scores
 
         
 
