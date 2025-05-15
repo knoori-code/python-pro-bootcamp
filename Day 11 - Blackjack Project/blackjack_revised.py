@@ -61,6 +61,9 @@ def compare_scores(player_cards, computer_cards):
     if computer_score > 21:
         show_final_scores(player_cards, computer_cards)
         print("The computer went over. You win!")
+        blackjack()
+
+    
 
 
 
@@ -83,7 +86,12 @@ def blackjack():
         show_current_score(player_hand, computer_hand)
 
         # Call compare_scores() to check for winner
-        
+        compare_scores(player_hand, computer_hand)
+
+
+        want_another_card = True
+        while want_another_card:
+            card_choice = input("Type 'y' to get another card, type 'n' to pass: ")
 
         
 
