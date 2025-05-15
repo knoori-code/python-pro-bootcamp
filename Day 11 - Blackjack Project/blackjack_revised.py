@@ -25,23 +25,26 @@ def compare_scores(player_cards, computer_cards):
     player_score = sum(player_cards)
     computer_score = sum(computer_cards)
 
-    if player_score == 21 and computer_score == 21:
-        # Show final scores if blackjack achieved
-        show_final_scores(player_cards, computer_cards)
-        print("Both players have Blackjack! The game is a draw.")
-        blackjack()
+    # Check for Blackjack when each player only has 2 cards
+    if len(player_cards) == 2 and len(computer_cards) == 2:
 
-    if player_score == 21:
-        # Show final scores if blackjack achieved
-        show_final_scores(player_cards, computer_cards)
-        print("You win the game with a Blackjack!")
-        blackjack()
+        if player_score == 21 and computer_score == 21:
+            # Show final scores if blackjack achieved
+            show_final_scores(player_cards, computer_cards)
+            print("Both players have Blackjack! The game is a draw.")
+            blackjack()
 
-    if computer_score == 21:
-        # Show final scores if blackjack achieved
-        show_final_scores(player_cards, computer_cards)
-        print("The computer has Blackjack! You lose.")
-        blackjack()
+        if player_score == 21:
+            # Show final scores if blackjack achieved
+            show_final_scores(player_cards, computer_cards)
+            print("You win the game with a Blackjack!")
+            blackjack()
+
+        if computer_score == 21:
+            # Show final scores if blackjack achieved
+            show_final_scores(player_cards, computer_cards)
+            print("The computer has Blackjack! You lose.")
+            blackjack()
 
 
 def blackjack(): 
@@ -60,7 +63,7 @@ def blackjack():
         # Show player's current cards and score and computer's first card
         show_current_score(player_hand, computer_hand)
 
-        # Call compare scores function to check for winner
+        # Call compare_scores() to check for winner
         
 
         
