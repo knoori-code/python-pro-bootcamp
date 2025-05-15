@@ -52,6 +52,7 @@ def compare_scores(player_cards, computer_cards):
     if player_score > 21 and computer_score > 21:
         show_final_scores(player_cards, computer_cards)
         print("You both went over. You both lose!")
+        blackjack()
 
     if player_score > 21:
         show_final_scores(player_cards, computer_cards)
@@ -62,7 +63,23 @@ def compare_scores(player_cards, computer_cards):
         show_final_scores(player_cards, computer_cards)
         print("The computer went over. You win!")
         blackjack()
+    
+    if player_score > computer_score:
+        show_final_scores(player_cards, computer_cards)
+        print("You win!")
+        blackjack()
 
+    if computer_score > player_score:
+        show_final_scores(player_cards, computer_cards)
+        print("You lose!")
+        blackjack
+
+    if player_score == computer_score:
+        show_final_scores(player_cards, computer_cards)
+        print("You both have the same score. Tie game!")
+
+
+        
     
 
 
@@ -91,7 +108,14 @@ def blackjack():
 
         want_another_card = True
         while want_another_card:
-            card_choice = input("Type 'y' to get another card, type 'n' to pass: ")
+            card_choice = input("Type 'y' to get another card, type 'n' to pass: ").lower()
+
+            # if want another card, add card to player's hand
+
+            # Update player score
+
+            # If player score > 21, compare scores
+            # If player score < 21, ask if player wants another card
 
         
 
