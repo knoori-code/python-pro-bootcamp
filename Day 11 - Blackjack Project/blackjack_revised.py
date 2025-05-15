@@ -48,6 +48,18 @@ def compare_scores(player_cards, computer_cards):
         show_final_scores(player_cards, computer_cards)
         print("The computer has Blackjack! You lose.")
         blackjack()
+    
+    if player_score > 21 and computer_score > 21:
+        show_final_scores(player_cards, computer_cards)
+        print("You both went over. You both lose!")
+
+    if player_score > 21:
+        show_final_scores(player_cards, computer_cards)
+        print("You went over. You lose!")
+        blackjack()
+
+
+
 
 
 def blackjack(): 
