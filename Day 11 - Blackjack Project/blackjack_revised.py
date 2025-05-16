@@ -19,72 +19,7 @@ def show_final_scores(player_cards, computer_cards):
     computer_score = sum(computer_cards)
     print(f"Your final hand: {player_cards}, final score: {player_score}")
     print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
-
-
-def compare_scores(player_cards, computer_cards):
-    player_score = sum(player_cards)
-    computer_score = sum(computer_cards)
-
-    if len(player_cards) == 2 and player_score == 21:
-        player_score = 0
-    
-    if len(computer_cards) == 2 and computer_score == 21:
-        computer_score = 0
-
-    if player_score == 0 and computer_score == 0:
-        # Show final scores if blackjack achieved
-        show_final_scores(player_cards, computer_cards)
-        print("Both players have Blackjack! The game is a draw.")
-        blackjack()
-
-    if player_score == 0:
-        # Show final scores if blackjack achieved
-        show_final_scores(player_cards, computer_cards)
-        print("You win the game with a Blackjack!")
-        blackjack()
-
-    if computer_score == 0:
-        # Show final scores if blackjack achieved
-        show_final_scores(player_cards, computer_cards)
-        print("The computer has Blackjack! You lose.")
-        blackjack()
-    
-    if player_score > 21 and computer_score > 21:
-        show_final_scores(player_cards, computer_cards)
-        print("You both went over. You both lose!")
-        blackjack()
-
-    if player_score > 21:
-        show_final_scores(player_cards, computer_cards)
-        print("You went over. You lose!")
-        blackjack()
-
-    if computer_score > 21:
-        show_final_scores(player_cards, computer_cards)
-        print("The computer went over. You win!")
-        blackjack()
-    
-    if player_score > computer_score:
-        show_final_scores(player_cards, computer_cards)
-        print("You win!")
-        blackjack()
-
-    if computer_score > player_score:
-        show_final_scores(player_cards, computer_cards)
-        print("You lose!")
-        blackjack
-
-    if player_score == computer_score:
-        show_final_scores(player_cards, computer_cards)
-        print("You both have the same score. Tie game!")
-
-
         
-    
-
-
-
-
 
 def blackjack(): 
     play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n'").lower()
@@ -105,7 +40,6 @@ def blackjack():
         # Call compare_scores() to check for winner
 
         # Different functions for determining Blackjack and regular scores?
-        compare_scores(player_hand, computer_hand)
 
 
         want_another_card = True
