@@ -37,10 +37,15 @@ def blackjack():
         # Show player's current cards and score and computer's first card
         show_current_score(player_hand, computer_hand)
 
-        # Call compare_scores() to check for winner
+        # Check if either player has Blackjack
+        player_score = sum(player_hand)
+        computer_score = sum(computer_hand)
 
-        # Different functions for determining Blackjack and regular scores?
-
+        if player_score == 21 and computer_score == 21:
+            # Show final scores
+            # print message saying who won
+            # Restart blackjack function by calling it again
+            
 
         want_another_card = True
         while want_another_card:
