@@ -56,6 +56,13 @@ def blackjack():
             # Restart blackjack function by calling it again
             blackjack()
 
+        if player_score == 0:
+            print(f"Your final hand: {player_hand}, final score: {player_score}")
+            print(f"Computer's final hand: {computer_hand}, final score: {computer_score}")
+            print("You win with a Blackjack!")
+            blackjack()
+
+        
             
 
         want_another_card = True
