@@ -41,10 +41,21 @@ def blackjack():
         player_score = sum(player_hand)
         computer_score = sum(computer_hand)
 
-        if player_score == 21 and computer_score == 21:
+        if player_score == 21:
+            player_score = 0
+
+        if computer_score == 21:
+            computer_score = 0
+
+        if player_score == 0 and computer_score == 0:
             # Show final scores
+            print(f"Your final hand: {player_hand}, final score: {player_score}")
+            print(f"Computer's final hand: {computer_hand}, final score: {computer_score}")
             # print message saying who won
+            print("Both players have Blackjack! The game is a draw.")
             # Restart blackjack function by calling it again
+            blackjack()
+
             
 
         want_another_card = True
