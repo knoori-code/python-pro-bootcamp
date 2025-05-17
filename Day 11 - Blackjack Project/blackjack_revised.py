@@ -62,6 +62,12 @@ def blackjack():
             print("You win with a Blackjack!")
             blackjack()
 
+        if computer_score == 0:
+            print(f"Your final hand: {player_hand}, final score: {player_score}")
+            print(f"Computer's final hand: {computer_hand}, final score: {computer_score}")
+            print("The computer has Blackjack. You lose.")
+            blackjack()
+
         
             
 
