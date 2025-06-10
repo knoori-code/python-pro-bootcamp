@@ -76,6 +76,8 @@ def blackjack():
             card_choice = input("Type 'y' to get another card, type 'n' to pass: ").lower()
 
             # if want another card, add card to player's hand
+            if card_choice == 'y':
+                generate_random_card(player_hand)
 
             # Update player score
 
