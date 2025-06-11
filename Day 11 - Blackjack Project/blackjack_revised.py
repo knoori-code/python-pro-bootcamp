@@ -1,7 +1,6 @@
 import art
 import random
 
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 def generate_random_card(hand):
     random_index = random.randint(0, 12)
@@ -19,7 +18,9 @@ def show_final_scores(player_cards, computer_cards):
     computer_score = sum(computer_cards)
     print(f"Your final hand: {player_cards}, final score: {player_score}")
     print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
-        
+
+
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 def blackjack(): 
     play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
@@ -80,8 +81,11 @@ def blackjack():
                 # Update player score
                 player_score = sum(player_hand)
 
-                # If player score > 21, compare scores and end game
-                
+                # If player score > 21, convert any 11s to 1s if applicable
+                if player_score > 21 and 11 in cards:
+
+
+
 
             # If player score < 21, ask if player wants another card. If not, tally computer score and compare scores
 
