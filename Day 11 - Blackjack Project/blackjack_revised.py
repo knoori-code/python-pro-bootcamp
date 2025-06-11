@@ -22,7 +22,7 @@ def show_final_scores(player_cards, computer_cards):
         
 
 def blackjack(): 
-    play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n'").lower()
+    play_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
     player_hand = []
     computer_hand = []
 
@@ -69,8 +69,6 @@ def blackjack():
             blackjack()
 
         
-            
-
         want_another_card = True
         while want_another_card:
             card_choice = input("Type 'y' to get another card, type 'n' to pass: ").lower()
