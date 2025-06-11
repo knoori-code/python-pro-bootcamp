@@ -86,6 +86,9 @@ def blackjack():
                 elif player_score > 21:
                     # Generate computer cards then compare both hands to determine winner; dealer hand equal or greater than 17, they stand
                     computer_score = sum(computer_hand)
+                    if computer_score < 17:
+                        generate_random_card(computer_hand)
+                        computer_score = sum(computer_hand)
 
                 
 
