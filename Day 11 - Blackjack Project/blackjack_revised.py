@@ -77,9 +77,12 @@ def blackjack():
             if card_choice == 'y':
                 generate_random_card(player_hand)
 
-            # Update player score
+                # Update player score
+                player_score = sum(player_hand)
 
-            # If player score > 21, compare scores and end game
+                # If player score > 21, compare scores and end game
+                
+
             # If player score < 21, ask if player wants another card. If not, tally computer score and compare scores
 
         
