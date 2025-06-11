@@ -77,14 +77,12 @@ def blackjack():
             # if want another card, add card to player's hand
             if card_choice == 'y':
                 generate_random_card(player_hand)
-
-                # Update player score
                 player_score = sum(player_hand)
 
-                # If player score > 21, convert any 11s to 1s if applicable
-                if player_score > 21 and 11 in cards:
-
-
+                # If player score > 21 and 11s in hand, change to 1
+                while player_score > 21 and 11 in player_hand:
+                    index_position = player_hand.index(11)
+                    player_hand[index_position] = 1
 
 
             # If player score < 21, ask if player wants another card. If not, tally computer score and compare scores
