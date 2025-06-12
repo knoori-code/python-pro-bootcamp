@@ -94,7 +94,8 @@ def blackjack():
                 # if player doesn't want card, tally scores and determine winner
                 player_score = sum(player_hand)
                 computer_score = sum(computer_hand)
-        
+                if computer_score < 17:
+                      generate_random_card(computer_hand)      
 
 
 blackjack()
