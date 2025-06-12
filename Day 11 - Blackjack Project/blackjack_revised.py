@@ -90,11 +90,10 @@ def blackjack():
                     show_final_scores(player_hand, computer_hand)
                     print("You went over 21. You lose!")
 
-                
-
-            # else:
+            else:
                 # if player doesn't want card, tally scores and determine winner
-
+                player_score = sum(player_hand)
+                computer_score = sum(computer_hand)
         
 
 
