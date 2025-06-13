@@ -83,12 +83,14 @@ def blackjack():
                 while player_score > 21 and 11 in player_hand:
                     index_position = player_hand.index(11)
                     player_hand[index_position] = 1
-                    show_current_score(player_hand, computer_hand)
+                    player_score = sum(player_hand)
                 
                 if player_score > 21:
                     show_current_score(player_hand, computer_hand)
                     show_final_scores(player_hand, computer_hand)
                     print("You went over 21. You lose!")
+                else:
+                    show_current_score(player_hand, computer_hand)
 
             else:
                 # if player doesn't want card, tally scores and determine winner
