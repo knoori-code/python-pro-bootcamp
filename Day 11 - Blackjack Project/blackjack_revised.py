@@ -89,6 +89,7 @@ def blackjack():
                     show_current_score(player_hand, computer_hand)
                     show_final_scores(player_hand, computer_hand)
                     print("You went over 21. You lose!")
+                    blackjack()
                 else:
                     show_current_score(player_hand, computer_hand)
 
