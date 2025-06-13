@@ -103,7 +103,11 @@ def blackjack():
 
                 # Compare score and determine winner
                 if player_score > computer_score:
-
+                    print("You win!")
+                elif player_score < computer_score:
+                    print("You lose.")
+                else:
+                    print("You and the computer have tied!")
 
 
 blackjack()
