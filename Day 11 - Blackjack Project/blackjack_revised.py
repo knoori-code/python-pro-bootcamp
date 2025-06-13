@@ -108,6 +108,8 @@ def blackjack():
                     print("You lose.")
                 else:
                     print("You and the computer have tied!")
+                
+                want_another_card = False
 
 
 blackjack()
