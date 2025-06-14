@@ -102,7 +102,9 @@ def blackjack():
                 show_final_scores(player_hand, computer_hand)
 
                 # Compare score and determine winner
-                if player_score > computer_score:
+                if computer_score > 21:
+                    print("You win!")
+                elif player_score > computer_score:
                     print("You win!")
                 elif player_score < computer_score:
                     print("You lose.")
