@@ -116,4 +116,5 @@ def blackjack():
 
 blackjack()
 
+# Swap 1 for 11 if player begins with two 11s
 # if player get new card and gets 21, game should stop. Tally player and computer scores and determine winner
