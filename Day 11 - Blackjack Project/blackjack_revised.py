@@ -26,7 +26,7 @@ def change_eleven_to_one(player_cards):
         index_position = player_cards.index(11)
         player_cards[index_position] = 1
         player_score = sum(player_cards)
-        return player_score
+    return player_score
 
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -44,15 +44,13 @@ def blackjack():
             generate_random_card(player_hand)
             generate_random_card(computer_hand)
 
-
+        player_score = change_eleven_to_one(player_hand)
+        computer_score = sum(computer_hand)
 
         # Show player's current cards and score and computer's first card
         show_current_score(player_hand, computer_hand)
-
+        
         # Check if either player has Blackjack
-        player_score = sum(player_hand)
-        computer_score = sum(computer_hand)
-
         if player_score == 21:
             player_score = 0
 
