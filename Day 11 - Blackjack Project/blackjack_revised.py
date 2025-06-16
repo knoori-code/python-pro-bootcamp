@@ -20,8 +20,13 @@ def show_final_scores(player_cards, computer_cards):
     print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
 
 
-def change_eleven_to_one():
-    
+def change_eleven_to_one(player_cards):
+    player_score = sum(player_cards)
+    while player_score > 21 and 11 in player_cards:
+        index_position = player_cards.index(11)
+        player_cards[index_position] = 1
+        player_score = sum(player_cards)
+        return player_score
 
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -86,10 +91,10 @@ def blackjack():
                 player_score = sum(player_hand)
 
                 # While player score > 21 and 11s in hand, change to 1
-                while player_score > 21 and 11 in player_hand:
-                    index_position = player_hand.index(11)
-                    player_hand[index_position] = 1
-                    player_score = sum(player_hand)
+                # while player_score > 21 and 11 in player_hand:
+                #     index_position = player_hand.index(11)
+                #     player_hand[index_position] = 1
+                #     player_score = sum(player_hand)
                 
                 if player_score > 21:
                     show_current_score(player_hand, computer_hand)
