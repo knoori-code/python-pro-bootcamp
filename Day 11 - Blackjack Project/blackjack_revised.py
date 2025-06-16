@@ -89,10 +89,7 @@ def blackjack():
                 player_score = sum(player_hand)
 
                 # While player score > 21 and 11s in hand, change to 1
-                # while player_score > 21 and 11 in player_hand:
-                #     index_position = player_hand.index(11)
-                #     player_hand[index_position] = 1
-                #     player_score = sum(player_hand)
+                change_eleven_to_one(player_hand)
                 
                 if player_score > 21:
                     show_current_score(player_hand, computer_hand)
@@ -121,6 +118,7 @@ def blackjack():
                     print("You and the computer have tied!")
                 
                 want_another_card = False
+                blackjack()
 
 
 blackjack()
