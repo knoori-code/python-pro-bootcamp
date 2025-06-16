@@ -86,12 +86,16 @@ def blackjack():
             # if want another card, add card to player's hand
             if card_choice == 'y':
                 generate_random_card(player_hand)
-                player_score = sum(player_hand)
 
                 # While player score > 21 and 11s in hand, change to 1
-                change_eleven_to_one(player_hand)
+                player_score = change_eleven_to_one(player_hand)
                 
-                if player_score > 21:
+                if player_score == 21:
+                    # show current scores
+                    # Update computer score
+                    # Compare scores and determine winner
+
+                elif player_score > 21:
                     show_current_score(player_hand, computer_hand)
                     show_final_scores(player_hand, computer_hand)
                     print("You went over 21. You lose!")
@@ -123,5 +127,4 @@ def blackjack():
 
 blackjack()
 
-# Swap 1 for 11 if player begins with two 11s
 # if player get new card and gets 21, game should stop. Tally player and computer scores and determine winner
