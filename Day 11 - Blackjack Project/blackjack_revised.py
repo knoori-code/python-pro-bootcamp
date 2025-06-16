@@ -20,6 +20,10 @@ def show_final_scores(player_cards, computer_cards):
     print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
 
 
+def change_eleven_to_one():
+    
+
+
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 def blackjack(): 
@@ -34,6 +38,8 @@ def blackjack():
         for i in range(2):
             generate_random_card(player_hand)
             generate_random_card(computer_hand)
+
+
 
         # Show player's current cards and score and computer's first card
         show_current_score(player_hand, computer_hand)
