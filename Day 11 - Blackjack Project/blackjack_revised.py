@@ -37,6 +37,19 @@ def update_computer_score(computer_cards):
     return computer_score
 
 
+def compare_scores(player_cards, computer_cards):
+    player_score = sum(player_cards)
+    computer_score = sum(computer_cards)
+    if computer_score > 21:
+        print("You win!")
+    elif player_score > computer_score:
+        print("You win!")
+    elif player_score < computer_score:
+        print("You lose.")
+    else:
+        print("You and the computer have tied!")
+
+
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 def blackjack(): 
@@ -117,14 +130,10 @@ def blackjack():
                 show_final_scores(player_hand, computer_hand)
 
                 # Compare score and determine winner; turn this into a function
-                if computer_score > 21:
-                    print("You win!")
-                elif player_score > computer_score:
-                    print("You win!")
-                elif player_score < computer_score:
-                    print("You lose.")
-                else:
-                    print("You and the computer have tied!")
+                compare_scores(player_hand, computer_hand)
+
+
+
                 
                 want_another_card = False
                 blackjack()
