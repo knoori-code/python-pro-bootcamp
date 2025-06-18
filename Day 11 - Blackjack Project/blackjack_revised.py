@@ -113,10 +113,7 @@ def blackjack():
 
             else:
                 # if player doesn't want card, tally scores and determine winner
-                
-
-
-                
+                computer_score = update_computer_score(computer_hand)
                 show_final_scores(player_hand, computer_hand)
 
                 # Compare score and determine winner; turn this into a function
@@ -134,5 +131,3 @@ def blackjack():
 
 
 blackjack()
-
-# if player get new card and gets 21, game should stop. Tally player and computer scores and determine winner
