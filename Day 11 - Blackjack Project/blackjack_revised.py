@@ -29,6 +29,14 @@ def change_eleven_to_one(player_cards):
     return player_score
 
 
+def update_computer_score(computer_cards):
+    computer_score = sum(computer_cards)
+    while computer_score < 17:
+        generate_random_card(computer_cards)
+        computer_score = sum(computer_cards)
+    return computer_score
+
+
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 def blackjack(): 
@@ -91,7 +99,7 @@ def blackjack():
                 player_score = change_eleven_to_one(player_hand)
                 
                 if player_score == 21:
-                    # show current scores
+                    show_current_score(player_hand, computer_hand)
                     # Update computer score
                     # Compare scores and determine winner
 
@@ -105,9 +113,9 @@ def blackjack():
 
             else:
                 # if player doesn't want card, tally scores and determine winner
-                while computer_score < 17:
-                    generate_random_card(computer_hand)
-                    computer_score = sum(computer_hand)
+                
+
+
                 
                 show_final_scores(player_hand, computer_hand)
 
