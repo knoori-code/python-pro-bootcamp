@@ -37,7 +37,7 @@ def update_computer_score(computer_cards):
     return computer_score
 
 
-def compare_scores(player_cards, computer_cards):
+def determine_winner(player_cards, computer_cards):
     player_score = sum(player_cards)
     computer_score = sum(computer_cards)
     if computer_score > 21:
@@ -114,7 +114,8 @@ def blackjack():
                 if player_score == 21:
                     show_current_score(player_hand, computer_hand)
                     update_computer_score(computer_hand)
-                    compare_scores(player_hand, computer_hand)
+                    show_final_scores(player_hand, computer_hand)
+                    determine_winner(player_hand, computer_hand)
 
                 elif player_score > 21:
                     show_current_score(player_hand, computer_hand)
@@ -130,7 +131,7 @@ def blackjack():
                 show_final_scores(player_hand, computer_hand)
 
                 # Compare score and determine winner; turn this into a function
-                compare_scores(player_hand, computer_hand)
+                determine_winner(player_hand, computer_hand)
 
                 want_another_card = False
                 blackjack()
