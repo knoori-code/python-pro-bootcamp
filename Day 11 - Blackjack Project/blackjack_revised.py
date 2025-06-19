@@ -125,7 +125,6 @@ def blackjack():
                     blackjack()
                 else:
                     show_current_score(player_hand, computer_hand)
-
             else:
                 # if player doesn't want card, tally scores and determine winner
                 computer_score = update_computer_score(computer_hand)
@@ -136,6 +135,8 @@ def blackjack():
 
                 want_another_card = False
                 blackjack()
+    else:
+        return
 
 
 blackjack()
