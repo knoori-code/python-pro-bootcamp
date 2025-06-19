@@ -116,6 +116,7 @@ def blackjack():
                     update_computer_score(computer_hand)
                     show_final_scores(player_hand, computer_hand)
                     determine_winner(player_hand, computer_hand)
+                    blackjack()
 
                 elif player_score > 21:
                     show_current_score(player_hand, computer_hand)
