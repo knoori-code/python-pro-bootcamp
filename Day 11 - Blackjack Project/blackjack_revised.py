@@ -130,7 +130,7 @@ def blackjack():
                 computer_score = update_computer_score(computer_hand)
                 show_final_scores(player_hand, computer_hand)
 
-                # Compare score and determine winner; turn this into a function
+                # Compare score and determine winner
                 determine_winner(player_hand, computer_hand)
 
                 want_another_card = False
