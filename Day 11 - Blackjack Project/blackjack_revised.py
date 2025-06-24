@@ -3,6 +3,7 @@ import random
 
 
 def generate_random_card(hand):
+    """Generate a random card and place in hand"""
     random_index = random.randint(0, 12)
     hand.append(cards[random_index])
 
