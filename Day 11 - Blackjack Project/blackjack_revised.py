@@ -9,6 +9,7 @@ def generate_random_card(hand):
 
 
 def show_current_score(player_cards, computer_cards):
+    """Take player and computer cards as input and display current scores"""
     player_score = sum(player_cards)
     print(f"Your cards: {player_cards}, current score: {player_score}")
     print(f"Computer's first card: {computer_cards[0]}")
