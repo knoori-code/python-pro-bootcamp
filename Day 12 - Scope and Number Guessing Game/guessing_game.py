@@ -2,8 +2,9 @@ import random
 
 print("Welcome to the Number Guessing Game!")
 print("I'm thinking of a number between 1 and 100.")
-difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
+difficulty = (input("Choose a difficulty. Type 'easy' or 'hard': "))
 number = random.randint(1, 100)
+print(f"The secret number is {number}")
 
 attempts_dict = {
     "easy": 10,
@@ -18,8 +19,7 @@ else:
 continue_guessing = True
 while continue_guessing:
     print(f"You have {attempts} attempts remaining to guess the number.")
-
-    guess = input("Make a guess: ")
+    guess = int(input("Make a guess: "))
 
     if guess > number:
         print("Too high.\nGuess again.")
@@ -28,4 +28,8 @@ while continue_guessing:
         print(f"Too low.\nGuess again.")
         attempts -= 1
     else:
-        print("You got it! The answer was {number}.")
+        print(f"You got it! The answer was {number}.")
+        continue_guessing = False
+
+    
+    
