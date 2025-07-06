@@ -31,5 +31,6 @@ while continue_guessing:
         print(f"You got it! The answer was {number}.")
         continue_guessing = False
 
-    
-    
+    if attempts == 0:
+        print(f"You've run out of guesses. Game over.")
+        continue_guessing = False
