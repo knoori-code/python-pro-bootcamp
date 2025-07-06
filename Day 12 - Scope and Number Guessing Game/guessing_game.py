@@ -15,18 +15,17 @@ if difficulty == 'easy':
 else:
     attempts = attempts_dict["hard"]
 
-print(f"You have {attempts} attempts remaining to guess the number.")
-
-guess = input("Make a guess: ")
-
-if guess > number:
-    print("Too high.\nGuess again.")
-    attempts -= 1
+continue_guessing = True
+while continue_guessing:
     print(f"You have {attempts} attempts remaining to guess the number.")
-elif guess < number:
-    print(f"Too low.\nGuess again.")
-    attempts -= 1
-    print(f"You have {attempts} attempts remaining to guess the number.")
-else:
-    print("You got it! The answer was {number}.")
-    
+
+    guess = input("Make a guess: ")
+
+    if guess > number:
+        print("Too high.\nGuess again.")
+        attempts -= 1
+    elif guess < number:
+        print(f"Too low.\nGuess again.")
+        attempts -= 1
+    else:
+        print("You got it! The answer was {number}.")
