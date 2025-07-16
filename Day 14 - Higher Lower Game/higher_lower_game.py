@@ -13,5 +13,6 @@ print(art.versus)
 print(f"Against B: {choice_b['name']}, a {choice_b['description']}, from {choice_b['country']}.")
 
 # Compare follower counts; if player is wrong, game over; if player is right, add 1 to score, item B becomes A, find new B
+player_choice = input("Who has more followers? Type 'A' or 'B': ").lower()
 
 # Compare both items again
