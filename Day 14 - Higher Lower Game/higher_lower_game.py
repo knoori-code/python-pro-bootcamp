@@ -15,4 +15,7 @@ print(f"Against B: {choice_b['name']}, a {choice_b['description']}, from {choice
 # Compare follower counts; if player is wrong, game over; if player is right, add 1 to score, item B becomes A, find new B
 player_choice = input("Who has more followers? Type 'A' or 'B': ").lower()
 
+follower_count_a = choice_a['follower_count']
+follower_count_b = choice_b['follower_count']
+
 # Compare both items again
