@@ -6,10 +6,12 @@ from game_data import data
 choice_a = random.choice(data)
 choice_b = random.choice(data)
 
+print(art.logo)
 # Display both with "vs"" and game logo
+print(f"Compare A: {choice_a['name']}, a {choice_a['description']}, from {choice_a['country']}.")
+print(art.versus)
+print(f"Against B: {choice_b['name']}, a {choice_b['description']}, from {choice_b['country']}.")
 
+# Compare follower counts; if player is wrong, game over; if player is right, add 1 to score, item B becomes A, find new B
 
-# Compare follower counts; if player is wrong, game over; if player is right, add 1 to score, choose new dictionary item to compare with correct 
-# item
-
-# Compare both items
+# Compare both items again
