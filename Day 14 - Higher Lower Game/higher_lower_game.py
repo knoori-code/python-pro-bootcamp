@@ -2,6 +2,18 @@ import random
 import art
 from game_data import data
 
+
+def check_answer(choice, followers_a, followers_b, score):
+    if choice == 'a' and followers_a > followers_b:
+        score += 1
+    elif choice == 'b' and followers_b > followers_a:
+        score += 1
+    else:
+        score = 0
+        print("Sorry, that's wrong. Final score is 0")
+    return score
+
+
 # Choose 2 items randomly from the data list to compare
 choice_a = random.choice(data)
 choice_b = random.choice(data)
@@ -19,17 +31,7 @@ player_choice = input("Who has more followers? Type 'A' or 'B': ").lower()
 follower_count_a = choice_a['follower_count']
 follower_count_b = choice_b['follower_count']
 
-if player_choice == 'a' and follower_count_a > follower_count_b:
-    score += 1
-    choice_a = choice_b
-elif player_choice == 'a' and follower_count_a < follower_count_b:
-    score = 0
-    print("Sorry, that's wrong. Final score is {score}")
-elif player_choice == 'b' and follower_count_b > follower_count_a:
-    score += 1
-    choice_a = choice_b
-elif player_choice == 'b' and follower_count_b < follower_count_a:
-    print("Sorry, that's wrong. Final score is {score}")
+
     
 
 # Compare both items again
