@@ -14,6 +14,8 @@ def check_answer(choice, followers_a, followers_b, score):
     return score
 
 
+print(art.logo)
+
 # Choose 2 items randomly from the data list to compare
 choice_a = random.choice(data)
 choice_b = random.choice(data)
@@ -21,7 +23,6 @@ choice_b = random.choice(data)
 follower_count_a = choice_a['follower_count']
 follower_count_b = choice_b['follower_count']
 
-print(art.logo)
 # Display both with "vs"" and game logo
 print(f"Compare A: {choice_a['name']}, a {choice_a['description']}, from {choice_a['country']}.")
 print(art.versus)
@@ -31,9 +32,11 @@ score = 0
 
 # Compare follower counts; if player is wrong, game over; if player is right, add 1 to score, item B becomes A, find new B
 player_choice = input("Who has more followers? Type 'A' or 'B': ").lower()
-
 score = check_answer(player_choice, follower_count_a, follower_count_b, score)
 
+if score != 0:
+    choice_a = choice_b
+    choice_b = random.choice(data)
     
 
 # Compare both items again
