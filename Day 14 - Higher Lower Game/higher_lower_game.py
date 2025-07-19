@@ -37,6 +37,9 @@ score = check_answer(player_choice, follower_count_a, follower_count_b, score)
 if score != 0:
     choice_a = choice_b
     choice_b = random.choice(data)
+
+# To clear console
+# print("\n" * 100)
     
 
 # Compare both items again
