@@ -32,6 +32,7 @@ def higher_lower_game():
         # Display both with "vs"" and game logo
         if score > 0:
             print(f"You're right! Current score: {score}")
+
         print(f"Compare A: {choice_a['name']}, a {choice_a['description']}, from {choice_a['country']}.")
         print(art.versus)
         print(f"Against B: {choice_b['name']}, a {choice_b['description']}, from {choice_b['country']}.")
