@@ -21,6 +21,8 @@ def higher_lower_game():
     # Choose 2 items randomly from the data list to compare
     choice_a = random.choice(data)
     choice_b = random.choice(data)
+    if choice_a == choice_b:
+        choice_b = random.choice(data)
 
     guessed_correct = True
 
